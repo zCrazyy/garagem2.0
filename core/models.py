@@ -40,6 +40,5 @@ class Carro(models.Model):
         Marca, on_delete=models.PROTECT, related_name="carro", default= ""
     )
 
-
     def __str__(self):
-        return f'{self.nome} ({self.quantidade})'
+        return f"{self.marca} {self.modelo} {self.cor} ({self.ano})"
