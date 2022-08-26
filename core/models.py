@@ -36,9 +36,6 @@ class Carro(models.Model):
     cor = models.ForeignKey(
         Cor, on_delete=models.PROTECT, related_name="carro", default= ""
     )
-    marca = models.ForeignKey(
-        Marca, on_delete=models.PROTECT, related_name="carro", default= ""
-    )
-
-    def __str__(self):
-        return f"{self.marca} {self.modelo} {self.cor} ({self.ano})"
+   
+def __str__(self):
+        return f"{self.marca} {self.categoria} {self.cor} ({self.ano})"
