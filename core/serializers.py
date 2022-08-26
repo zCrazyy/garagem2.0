@@ -13,6 +13,12 @@ class CarroSerializer(ModelSerializer):
         model = Carro
         fields = "__all__"
 
+class CarroDetailSerializer(ModelSerializer):
+    class Meta:
+        model = Carro
+        fields = "__all__"
+        depth = 1
+
 class CorSerializer(ModelSerializer):
     class Meta:
         model = Cor

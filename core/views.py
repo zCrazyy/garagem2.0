@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
 from core.models import Carro, Categoria
-from core.serializers import CategoriaSerializer, CarroSerializer, MarcaSerializer, CorSerializer
+from core.serializers import CategoriaSerializer, CarroSerializer, MarcaSerializer, CorSerializer, CarroDetailSerializer
 
 class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()
@@ -10,6 +10,11 @@ class CategoriaViewSet(ModelViewSet):
 class CarroViewSet(ModelViewSet):
     queryset = Carro.objects.all()
     serializer_class = CarroSerializer
+
+    def get_serializer_class(self):
+        if self.action in ['list', 'retrieve']:
+            return CarroDetailSerializer
+        return CarroSerializer
 
 class MarcaViewSet(ModelViewSet):
     queryset = Carro.objects.all()

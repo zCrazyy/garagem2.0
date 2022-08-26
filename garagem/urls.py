@@ -3,19 +3,10 @@ from django.urls import include, path
 
 from rest_framework.routers import DefaultRouter
 
-from core.views import CategoriaViewSet,CarroViewSet,CorViewSet,MarcaViewSet
+from core.views import CategoriaViewSet
 
 router = DefaultRouter()
 router.register(r'categorias', CategoriaViewSet)
-
-router = DefaultRouter()
-router.register(r'carros', CarroViewSet)
-
-router = DefaultRouter()
-router.register(r'cores', CorViewSet)
-
-router = DefaultRouter()
-router.register(r'marcas', MarcaViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
