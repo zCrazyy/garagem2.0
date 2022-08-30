@@ -1,1 +1,1 @@
-web: gunicorn garagem2.0.wsgi
+web: gunicorn garagem.wsgi
